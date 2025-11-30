@@ -15,24 +15,24 @@ As the preparations come to an end, and The Fray draws near each day, our newly 
 
 We have 2 files bash_history.txt and sshd.log
 When we connect to the address that description provided, we have to answer correctly to get the flag
-(/assets/1_1.jpg)
+![Banner](/assets/1_1.png)
 
-![First question](/assets/1_2.jpg)
+![First question](/assets/1_2.png)
 _In ssh log, we can see port 2221 and ip 100.107.36.130 at line 3._
 
-![Second question](/assets/1_3.jpg)
+![Second question](/assets/1_3.png)
 _At line 11, the first 'Accepted password'_
 
-![Third question](/assets/1_4.jpg)
+![Third question](/assets/1_4.png)
 _I saw an ip different from others and it accessed as the root role_
 
-![Fourth question](/assets/1_5.jpg)
+![Fourth question](/assets/1_5.png)
 _I didn't know the Fingerprint's meaning in this context, so i ask gemini. He said that it's the value of SHA256_
 
-![Fifth question](/assets/1_6.jpg)
+![Fifth question](/assets/1_6.png)
 _With timestamp as above, we notice at line 22 in bash_history.txt_
 
-![Sixth question](/assets/1_7.jpg)
+![Sixth question](/assets/1_7.png)
 _I compared the timestamp with sshd.log and i found the ans in line 30_
 
 

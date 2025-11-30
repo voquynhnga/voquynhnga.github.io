@@ -22,27 +22,27 @@ When we connect to the address that the description provided, we have to answer 
 
 -> In ssh log, we can see port 2221 and ip 100.107.36.130 at line 3.
 
-
+<br>
 ![Second question](/assets/1_3.png){: .normal }
 
 -> At line 11, the first 'Accepted password'
 
-
+<br>
 ![Third question](/assets/1_4.png){: .normal }
 
 -> I saw an ip different from others and it accessed as the root role
 
-
+<br>
 ![Fourth question](/assets/1_5.png){: .normal }
 
 -> I didn't know the Fingerprint's meaning in this context, so i ask gemini. He said that it's the value of SHA256
 
-
+<br>
 ![Fifth question](/assets/1_6.png){: .normal }
 
 -> With timestamp as above, we notice at line 22 in bash_history.txt
 
-
+<br>
 ![Sixth question](/assets/1_7.png){: .normal }
 
 -> I compared the timestamp with sshd.log and i found the ans in line 30

@@ -2,7 +2,7 @@
 title: An unusual sighting - CTF Try Out.
 date: 2025-11-30 18:27:00 +0700
 categories: [Forensics, Hackthebox]
-tags: [log, linux]
+tags: [log, linux, very easy, noAI]
 ---
 
 > Heheh this is my first post in my blog. I'm currently a fourth-year student, I'm aware that it's too late to begin writing a blog. But better late than never. I decided to write this blog to improve my writing skills in English and learn forensics seriously. Hope that I'll never give up.

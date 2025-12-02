@@ -11,7 +11,7 @@ tags: [firmware, linux, easy]
 Challenge provided 1 file chal_router_dump.bin
 When we connect to the address that the description provided, we have to answer 7 questions correctly to get the flag.
 
-![All](/assets/1/1.png){: .normal }
+![All](/assets/2/1.png){: .normal }
 
 -> For most question, i've just used strings grep to find answer. 
 But at ques 3, i lost a lot of time to ask Gemini :))  And after long time, i realized it had jffs2, so i install extension jefferson and binwalk to extract. 

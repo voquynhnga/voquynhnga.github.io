@@ -1,6 +1,6 @@
 ---
 title: Silicon Data Sleuthing - CTF Try Out
-date: 2025-11-30 18:27:00 +0700
+date: 2025-12-1 18:27:00 +0700
 categories: [Forensics, Hackthebox]
 tags: [firmware, linux, easy]
 ---
@@ -14,4 +14,4 @@ When we connect to the address that the description provided, we have to answer 
 ![All](/assets/2/1.png){: .normal }
 
 -> For most question, i've just used strings grep to find answer. 
-But at ques 3, i lost a lot of time to ask Gemini :))  And after long time, i realized it had jffs2, so i install extension jefferson and binwalk to extract. 
+But at ques 3, i lost a lot of time to ask Gemini :))  And after long time, i realized it had jffs2, so i installed extension jefferson and used binwalk -e to extract. 

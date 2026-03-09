@@ -1,5 +1,5 @@
 ---
-title: Whisper- HTB Sherlocks
+title: Whisper - HTB Sherlocks
 date: 2026-03-09 21:27:00 +0700
 categories: [Forensics, Hackthebox]
 tags: [DFIR, window, easy]
@@ -13,10 +13,12 @@ We have to complete 14 tasks
 
 1. What is the hostname of the company computer involved in the unauthorized activity?
 -> Firstly, i just found only 1 "artifact". It's ConsoleHost_history.txt. And it contains a computer's hostname, i was fully convinced that it's correct. But not ~~. Then, i realized that modified date of this file is not 20-21/1. Therefore, i forward my mind to the event, tadaa, i see it. Computer's host name is Helpdesk.
+
 ![All](/assets/3/1.png){: .normal }
 
 2. What is the IP address associated with the machine?
 -> I found the answer in HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces
+
 ![All](/assets/3/2.png){: .normal }
 
 3. What is the Security Identifier (SID) of the computer involved in the incident?
@@ -42,10 +44,12 @@ Mimikatz is an open-source post-exploitation tool designed for Windows operating
 7. What is the timestamp when the attacker first downloaded the credential extraction tool onto the system?
 
 ![All](/assets/3/4.png){: .normal }
+
 -> I remember about the file zip.
 
 8. After using the previously mentioned tool, the attacker downloaded a script to scan the domain controller. What is the URL from which the attacker downloaded this script?
 -> I used DB Browser (SQLite) to open "C\Users\Alpha\AppData\Local\Microsoft\Edge\User Data\Default\History". 
+
 ![All](/assets/3/5.png){: .normal }
 
 9. What is the filename of the script? (Format - Full path of file, starting with drive letter)
@@ -53,7 +57,7 @@ Mimikatz is an open-source post-exploitation tool designed for Windows operating
 
 10. What is the timestamp indicating when the attacker deleted the script after it was downloaded?
 
-```
+```{python}
 MFTEcmd.exe -f "F:\OneDrive\CTF\HTB\Whisper\C\$J" --csv "F:\OneDrive\CTF\HTB\Whisper\C"
 ```
 
@@ -70,7 +74,7 @@ MFTEcmd.exe -f "F:\OneDrive\CTF\HTB\Whisper\C\$J" --csv "F:\OneDrive\CTF\HTB\Whi
 
 13. How many times has the newly created user logged in?
 
-```
+```{python}
 $UserSID = "S-1-5-21-953115734-2025219997-3674921352-1002"
 
 # Sử dụng -Path để trỏ vào file .evtx cụ thể

@@ -31,15 +31,13 @@ We have to complete 14 tasks
 -> I use MFT Explorer to watch $MFT file. I found in folder Downloads of user Alpha had mimikatz_trunk.zip. And in prefetch, i saw 2 file prefetch of mimikatz.exe
 -> mimikatz.exe
 
-Mimikatz is an open-source post-exploitation tool designed for Windows operating systems that extracts plaintext passwords, hashes, PIN codes, and Kerberos tickets from memory. 
+> Mimikatz is an open-source post-exploitation tool designed for Windows operating systems that extracts plaintext passwords, hashes, PIN codes, and Kerberos tickets from memory. 
 {: .prompt-tip }
 
 6. What is the timestamp of the last execution of the credential extraction tool on the system used by the attacker?
 -> I tried entering modified date of file mimikatz prefetch but it's not true. Then, i used PECmd to show detail base on file prefetch. 
 
 ![All](/assets/3/3.png){: .normal }
-
-
 
 7. What is the timestamp when the attacker first downloaded the credential extraction tool onto the system?
 
@@ -57,7 +55,7 @@ Mimikatz is an open-source post-exploitation tool designed for Windows operating
 
 10. What is the timestamp indicating when the attacker deleted the script after it was downloaded?
 
-```{python}
+```{yaml}
 MFTEcmd.exe -f "F:\OneDrive\CTF\HTB\Whisper\C\$J" --csv "F:\OneDrive\CTF\HTB\Whisper\C"
 ```
 
@@ -71,12 +69,10 @@ MFTEcmd.exe -f "F:\OneDrive\CTF\HTB\Whisper\C\$J" --csv "F:\OneDrive\CTF\HTB\Whi
 
 -> I explained in question 3.
 
-
 13. How many times has the newly created user logged in?
 
-```{python}
+```{yaml}
 $UserSID = "S-1-5-21-953115734-2025219997-3674921352-1002"
-
 # Sử dụng -Path để trỏ vào file .evtx cụ thể
 Get-WinEvent -Path ".\Security2" -FilterXPath "*[System[(EventID=4624)] and EventData[Data[@Name='TargetUserSid']='$UserSID']]" | Measure-Object | Select-Object -ExpandProperty Count
 ```

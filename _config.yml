@@ -67,7 +67,7 @@ pageviews:
   provider:
 
 # Prefer color scheme setting.
-theme_mode: dark # [light | dark]
+theme_mode: light # [light | dark]
 
 # The CDN endpoint for media resources.
 cdn:

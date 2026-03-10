@@ -79,7 +79,7 @@ Get-WinEvent -Path ".\Security2" -FilterXPath "*[System[(EventID=4624)] and Even
 
 -> The answer is 0
 <br>
-### **What is the password of the newly created user?**
+### **Question 14. What is the password of the newly created user?**
 -> I used secretdumps.exe to extract the NTLM hash of newly created user "Admin" 
 
 ```powershell
@@ -97,8 +97,8 @@ Admin:1002:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
 [*] Cleaning up...
 ```
 
-Then, I decode this NTLM hash by [Crack Station](https://crackstation.net/)
-![All](/assets/3/7.png){: .normal }
+Then, I decoded Admin's NTLM hash by [Crack Station](https://crackstation.net/)
+![All](/assets/3/8.png){: .normal }
 
 
 

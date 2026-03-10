@@ -6,13 +6,13 @@ tags: [DFIR, window, easy]
 ---
 
 
-> The SOC team received an alert on 21st January 2025 about suspicious activity originating from an employee's system (Alpha). Alpha was not authorized to engage in any offensive hacking activities within the network. The Incident Response (IR) team quickly acted, isolating the system so you can perform a thorough triage and investigation to determine the scope of the breach and potential impact on the network.
+> The SOC team received an alert on 21st January 2025 about suspicious activity originating from an employee's system (Alpha). Alpha was not authorized to engage in any offensive hacking activities within the network. The Incident Response (IR) team quickly acted, isolating the system so you can perform a thorough triage and investigation to determine the scope of the breach and potential impact on the network.<br>
 
 Challenge provided 2 log files: 2025-01-21T02_02_01_6418515_CopyLog.csv and 2025-01-21T02_02_01_6418515_SkipLog.csv<br>
 We have to complete 14 tasks<br>
 
-### Question 1. What is the hostname of the company computer involved in the unauthorized activity?<br>
--> Firstly, i just found only 1 "artifact". It's ConsoleHost_history.txt. And it contains a computer's hostname, i was fully convinced that it's correct. But not ~~. Then, i realized that modified date of this file is not 20-21/1. Therefore, i forward my mind to the event, tadaa, i see it. Computer's host name is Helpdesk.
+## **Question 1. What is the hostname of the company computer involved in the unauthorized activity?**<br>
+-> Firstly, i just found only 1 "artifact". It's ConsoleHost_history.txt. And it contains a computer's hostname, i was fully convinced that it's correct. But not ~~. Then, i realized that the modification date didn't align with the incident (20-21/1). Therefore, i forward my mind to the Window Event Logs (Security), tadaa, i see it. Computer's host name is Helpdesk.
 
 ![All](/assets/3/1.png){: .normal }
 

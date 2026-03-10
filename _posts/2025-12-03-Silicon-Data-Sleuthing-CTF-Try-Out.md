@@ -2,7 +2,7 @@
 title: Silicon Data Sleuthing - CTF Try Out
 date: 2025-12-1 18:27:00 +0700
 categories: [Forensics, Hackthebox]
-tags: [firmware, linux, easy]
+tags: [firmware, linux, easy, practice]
 ---
 
 

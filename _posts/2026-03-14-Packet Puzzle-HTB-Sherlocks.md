@@ -8,19 +8,7 @@ tags: [SOC, easy, practice]
 
 > You are a junior security analyst at a small Japanese cryptocurrency trading company. After detecting suspicious activity on the internal network, you exported a PCAP for further investigation. Analyze this capture to determine whether the environment was compromised and reconstruct the attacker’s actions.<br>
 
-Challenge provided a .eml files: `email.eml`. In this email, we had 1 zip file of invoice <br>
-
-![All](/assets/4/1.png){: .normal }
-
-Initially, I cannot extract the zip file, so I tried using followed command
-
-```shell
-zip -FF Invoice_2025_Payment.zip --out fixed_file.zip
-```
-
-Hmmm, it still didn't work. I watch the official writeup a bit and I realized that it didn't need extract the zip file :)) . <br>
-We have to answer 11 questions<br>
-Most of question were in the .eml file. We just need to used notepad or VSCode to explorer answers
+Challenge provided a pcap files: `NetworkTraffic.pcap`<br>
 
 ### **Question 1. What is the source IP address of the attacker involved in this Attack?**
 ![All](/assets/6/1.png){: .normal }
@@ -36,7 +24,7 @@ tshark -r NetworkTraffic.pcap -Y "ip.src == 192.168.170.130 && tcp.flags.syn == 
 ![All](/assets/6/3.png){: .normal }
 ### **Question 4. What is the CVE identifier for the vulnerability exploited by the attacker?**
 
--> Gemini suggest me that this attack base on the PHP CGI Argument Injection exploition, so I research and identified the answer.
+-> Gemini suggested that this attack was based on the PHP CGI Argument Injection vunerability, so I researched and identified the answer.
 ![All](/assets/6/4.png){: .normal }
 
 ### **Question 5. What is the name and version of the vulnerable product exploited to get RCE?**

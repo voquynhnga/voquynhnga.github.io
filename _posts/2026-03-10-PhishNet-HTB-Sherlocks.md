@@ -8,7 +8,7 @@ tags: [SOC, very easy, practice]
 
 > An accounting team receives an urgent payment request from a known vendor. The email appears legitimate but contains a suspicious link and a .zip attachment hiding malware. Your task is to analyze the email headers, and uncover the attacker's scheme.<br>
 
-Challenge provided a .eml files: `email.eml`. In this email, we had 1 zip file of invoice <br>
+Challenge provided a .eml file: `email.eml`. In this email, we had 1 zip file of invoice <br>
 
 ![All](/assets/4/1.png){: .normal }
 

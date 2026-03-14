@@ -52,7 +52,7 @@ tshark -r NetworkTraffic.pcap -Y "ip.src == 192.168.170.130 && tcp.flags.syn == 
 ### **Question 10. What is the command line used by the attacker while performing privilege escalation?**
 ![All](/assets/6/9.png){: .normal }
 ### **Question 11.The attacker failed to escalate privileges and was given an error. What is the error?**
-![All](/assets/6/10.png){: .normal }
+![All](/assets/6/11.png){: .normal }
 
 
 

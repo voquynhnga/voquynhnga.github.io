@@ -1,5 +1,5 @@
 ---
-title: Packet Puzzle - HTB Sherlocks
+title: Just Some Pages - HTB Sherlocks
 date: 2026-03-14 09:09:00 +0700
 categories: [Forensics, Hackthebox]
 tags: [SOC, medium, practice]

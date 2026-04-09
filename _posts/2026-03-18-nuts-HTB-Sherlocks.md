@@ -10,7 +10,6 @@ tags: [DFIR, medium, practice]
 
 You will be given network traffic logs from one of the impacted machines. Your task is to conduct a thorough investigation to unravel the attacker's Techniques, Tactics, and Procedures (TTPs).<br>
 
-Challenge provided a pcap files: `NetworkTraffic.pcap`<br>
 
 ### **Question 1. What is the source IP address of the attacker involved in this Attack?**
 ![All](/assets/6/1.png){: .normal }

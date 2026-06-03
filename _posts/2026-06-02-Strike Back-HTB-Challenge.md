@@ -336,17 +336,3 @@ Attacker injected Mimikatz module to run command `logonpasswords` and get the NT
 
 - Stage 4: C2 and Exfiltration
 GET /match and POST /submit.php are used to communicate with server and exfiltrate data
-
-
-
-
-
-
-
-
-
-
-
-
-
-

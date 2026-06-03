@@ -8,11 +8,11 @@ tags: [Linux, medium, practice]
 
 >A fleet of steam blimps waits the final signal from their commander in order to attack gogglestown kingdom. A recent cyber attack had us thinking if the enemy managed to discover our plans and prepare a counter-attack. Will the fleet get ambused???
 
-Hmm, begin with observing the pcap file, I saw that user downloaded a malicious file named freesteam.exe
+Hmm, beginning with an analysis of the pcap file, I noticed that user downloaded a malicious file named freesteam.exe
 
 ![All](/assets/15-strike back/1.png){: .normal }
 
-I uploaded this file to virustotal to identify it. And I saw that is CobaltStrile trojan.
+I uploaded this file to virustotal to identify it. And I saw that is CobaltStrike trojan.
 ![All](/assets/15-strike back/2.1.png){: .normal }
 
 its behavior:
@@ -21,16 +21,19 @@ its behavior:
 I used IDA to reverse freesteam.exe but it didn't have any valuable information.
 ![All](/assets/15-strike back/3.png){: .normal }
 
-Therefore, I continually worked with iVd9 file. It is a shellcode of CobaltStrike. 
+Therefore, I continued with the iVd9 file. It is a shellcode of CobaltStrike. 
 ![All](/assets/15-strike back/4.png){: .normal }
 
-I found a tool named CobaltStrikeParser and CobaltStrikeScan but they only extracted basic. information. 
+I found a tool named CobaltStrikeParser and CobaltStrikeScan but they only extracted basic configuration information. 
 ![All](/assets/15-strike back/5.1.png){: .normal }
 
 
-After researching CobaltStrike, I knew that I had to find the key to decode the data exfiltrated. https://github.com/DidierStevens/Beta
+After researching CobaltStrike, I knew that I had to find the key to decrypt the data exfiltrated. And the key wasn't in static PE file, it only existed in runtime memory. And I found the tool which can extract key from memory. It is https://github.com/DidierStevens/Beta
 
 `python .\cs-extract-key.py -t a4940d6ff0a59421822467d80d1b620bc7ecfa661c452a85c0486b56aa752e908c4aeb3f2f0a64d9c02d7025713867ee ..\freesteam.dmp`
+> The -t flag takes a test value — the raw bytes from the smallest POST body in the pcap (divisible by 16 for AES block size) — which the tool uses to verify the HMAC signature when scanning the memory dump for keys.
+{: .prompt-tip }
+
 ![All](/assets/15-strike back/5.2.png){: .normal }
 
 I used the following filter and selected File->Export Specified Packets to save these frames into a new pcap file.
@@ -313,25 +316,25 @@ I used the following filter and selected File->Export Specified Packets to save 
     32 UNKNOWN: 1
 ```
 
-After decoding content of method POST, we could see the attacker downloaded a file named orders.pdf. I extracted this file by the following command
+After decrypting the contents of method POST, we could see the attacker downloaded a file named orders.pdf. I extracted this file by the following command
 
 `python .\cs-parse-http-traffic.py -k bf2d35c0e9b64bc46e6d513c1d0f6ffe:3ae7f995a2392c86e3fa8b6fbc3d953a -e ../capture1.pcap`
 
 The file contains the flag
 ![All](/assets/15-strike back/5.png){: .normal }
 
-Conclusive, the kill chain for this chal is:
+In conclusion, the kill chain for this chal is:
 - Stage 1: Execution & Persistence
 Use freesteam.exe to call malicious dll (dll sideloading)
-- Stage 2: Defense Evasion
-Use Memory Obfuscation technique to encode key and config in RAM (that is the reason why I tried to use Yara to scan many times but there has no result)
 
+- Stage 2: Defense Evasion
+Use Memory Obfuscation technique to encrypt the AES key and beacon config in RAM (that is the reason why I tried to use Yara to scan many times but there has no result).
 Create \pipe\MSSE-xxxx-server to hide the interval communication (Named Pipe Communication)
 
 - Stage 3: Credential Access
 Attacker injected Mimikatz module to run command `logonpasswords` and get the NTLM Hashes of Admin account
 
--Stage 4: C2 and Exfiltration
+- Stage 4: C2 and Exfiltration
 GET /match and POST /submit.php are used to communicate with server and exfiltrate data
 
 

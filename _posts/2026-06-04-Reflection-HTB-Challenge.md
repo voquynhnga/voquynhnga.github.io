@@ -18,7 +18,7 @@ Continuing with `vol3 -f memory.raw windows.malfind.Malfind`, I observed two sus
 
 So I dumped these memory regions and inspected the output files in notepad++, and saw the DOS header `!This program cannot be run in DOS mode.`, indicating a hidden PE file residing in memory
 ![All](/assets/16-reflection/3.png){: .normal }
-![All](/assets/16-reflection/3.1.png){: .normal }
+![All](/assets/16-reflection/4.1.png){: .normal }
 
 Therefore, I change the extension of pid.3244.vad.0xb0000-0xb3fff.dmp and reverse it by IDA. 
 ![All](/assets/16-reflection/4.png){: .normal }

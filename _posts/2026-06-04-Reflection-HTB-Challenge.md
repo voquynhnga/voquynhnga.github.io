@@ -23,10 +23,8 @@ So I dumped these memory regions and inspected the output files in notepad++, an
 Therefore, I change the extension of pid.3244.vad.0xb0000-0xb3fff.dmp and reverse it by IDA. 
 ![All](/assets/16-reflection/4.png){: .normal }
 
-
 I noticed the truncated command, `powershell-ep bypass -enc ZQBjAGgAbwAgAEgAVABCAHsAZABsAGwAcwBfAGMANABuAF8AYgAzAF8AaAA0AHIAZABfAHQAMABfAGYAMQBuAGQAfQA=`. Decoding this Base64 string, we had the flag
 ![All](/assets/16-reflection/5.png){: .normal }
-
 
 In conclusion, the kill chain is:
 - The victim downloaded and executed a fake update script (`update.ps1`).

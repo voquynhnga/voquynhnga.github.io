@@ -2,7 +2,7 @@
 title: Strike Back - HTB Challenge
 date: 2026-06-02 22:08:00 +0700
 categories: [Challenge, Hackthebox]
-tags: [Linux, medium, practice]
+tags: [Windows, medium, practice, challenge]
 ---
 
 
@@ -324,15 +324,15 @@ The file contains the flag
 ![All](/assets/15-strike back/5.png){: .normal }
 
 In conclusion, the kill chain for this chal is:
-- Stage 1: Execution & Persistence
+- **Stage 1: Execution & Persistence:**
 Use freesteam.exe to call malicious dll (dll sideloading)
 
-- Stage 2: Defense Evasion
+- **Stage 2: Defense Evasion:**
 Use Memory Obfuscation technique to encrypt the AES key and beacon config in RAM (that is the reason why I tried to use Yara to scan many times but there has no result).
 Create \pipe\MSSE-xxxx-server to hide the interval communication (Named Pipe Communication)
 
-- Stage 3: Credential Access
+- **Stage 3: Credential Access:**
 Attacker injected Mimikatz module to run command `logonpasswords` and get the NTLM Hashes of Admin account
 
-- Stage 4: C2 and Exfiltration
+- **Stage 4: C2 and Exfiltration:**
 GET /match and POST /submit.php are used to communicate with server and exfiltrate data

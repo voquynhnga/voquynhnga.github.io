@@ -1,13 +1,13 @@
 ---
 title: Memeory - HCMUS CTF Qualification 2026
 date: 2026-06-09 08:46:00 +0700
-categories: [Challenge, HCMUSCTF]
+categories: [Contest, HCMUSCTF]
 tags: [Windows, CTF, '2026']
 ---
 
 > When was the last time you touched Volatility? 4-part flag
 
-This was the last forensics challenge that I couldn't solve during the CTF :( To free up my storage, I decided to finish this challenge over two weeks after the contest ended.
+This was the last forensics challenge that I couldn't solve during the contest :( To free up my storage, I decided to finish this challenge over two weeks after the contest ended.
 
 The challenge only provided a raw memory image. Since the description explicitly mentioned Volatility, I used familiar Volatility 3 plugins like `pslist`, `pstree`, `filescan`, etc,..
 
@@ -76,5 +76,6 @@ Combining the output with the context, I identified the 1st and 2nd letters as `
 
 After unlocking the KeePass file, part 4 was: `d_call_it_a_challenge_to_meet_kpi}`
 
-The final flag is: `HCMUS-CTF{d0nt_m1nd_me_just_doing_random_stuff_on_window_4nd_call_it_a_challenge_to_meet_kpi}`
+The final flag is: 
+`HCMUS-CTF{d0nt_m1nd_me_just_doing_random_stuff_on_window_4nd_call_it_a_challenge_to_meet_kpi}`
 

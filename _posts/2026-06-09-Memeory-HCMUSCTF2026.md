@@ -1,8 +1,8 @@
 ---
-title: Memeory - HCMUS CTF 2026
+title: Memeory - HCMUS CTF Qualification 2026
 date: 2026-06-09 08:46:00 +0700
 categories: [Challenge, HCMUSCTF]
-tags: [Windows, CTF, 2026]
+tags: [Windows, CTF, '2026']
 ---
 
 > When was the last time you touched Volatility? 4-part flag
